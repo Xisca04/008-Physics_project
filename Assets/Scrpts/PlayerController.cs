@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public bool hasPowerup;
     private float powerupForce = 15f;
 
+    public GameObject[] powerupIndicators;   // Cuenta atras del powerup
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -48,7 +50,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PowerupCountDown()
     {
-        yield return new WaitForSeconds(6);
+        for(int i = 0; i < powerupIndicators.Length; i++)
+        {
+            powerupIndicators[i].SetActive(true);
+            yield return new WaitForSeconds(2);
+            powerupIndicators[i].SetActive(false);
+        }
+
         hasPowerup = false;
     }
 }

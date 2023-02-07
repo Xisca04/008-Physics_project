@@ -18,5 +18,10 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = (player.transform.position - transform.position).normalized;  // Calcula el vector para dirigirse hacia el player, restando las posiciones
         _rigidbody.AddForce(direction * speed);
+        
+        if(transform.position.y < -2)
+        {
+            Destroy(gameObject);
+        }
     }
 }
