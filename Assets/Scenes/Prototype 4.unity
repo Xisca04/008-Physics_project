@@ -909,6 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   hasPowerup: 1
+  hasUltraPowerup: 0
   powerupIndicators:
   - {fileID: 1832598116}
   - {fileID: 1838465628}
@@ -946,6 +947,7 @@ MonoBehaviour:
   enemiesInScene: 0
   enemiesPerWave: 1
   powerupPrefab: {fileID: 5656436947770324549, guid: 59150b21e98c39d4ca30b3b88cb7312e, type: 3}
+  ultraPowerupPrefab: {fileID: 786928514884565067, guid: a4e71afaf74efe0439d960c863963a56, type: 3}
 --- !u!4 &2100045485
 Transform:
   m_ObjectHideFlags: 0

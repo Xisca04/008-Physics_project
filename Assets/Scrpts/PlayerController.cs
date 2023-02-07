@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private GameObject focalPoint;
 
     public bool hasPowerup;
+    public bool hasUltraPowerup;
+    
     private float powerupForce = 15f;
 
     public GameObject[] powerupIndicators;   // Cuenta atras del powerup
@@ -36,6 +38,12 @@ public class PlayerController : MonoBehaviour
             hasPowerup = true;
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("UltraPowerup"))
+        {
+            hasUltraPowerup = true;
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -45,6 +53,12 @@ public class PlayerController : MonoBehaviour
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position).normalized;
             enemyRigidbody.AddForce(awayFromPlayer * powerupForce, ForceMode.Impulse);
+        }
+
+        if(other.gameObject.CompareTag("Enemy") && hasUltraPowerup)    // Aumento tamaño con el ultrapowerup
+        {
+            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+            transform.localScale = new Vector3(5, 5, 5);
         }
     }
 

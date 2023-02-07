@@ -11,11 +11,13 @@ public class SpawnManager : MonoBehaviour
     public int enemiesInScene;
     public int enemiesPerWave = 1;
     public GameObject powerupPrefab;
+    public GameObject ultraPowerupPrefab;
 
     private void Start()
     {
         SpawnEnemyWave(enemiesPerWave);  // El numero de entre los parentesis indica cuantos enemigos se crearan
         Instantiate(powerupPrefab, RandomSpawnPosition(), Quaternion.identity);
+        Instantiate(ultraPowerupPrefab, RandomSpawnPosition(), Quaternion.identity);
     }
 
     private Vector3 RandomSpawnPosition()
@@ -42,6 +44,7 @@ public class SpawnManager : MonoBehaviour
             enemiesPerWave++;
             SpawnEnemyWave(enemiesPerWave);
             Instantiate(powerupPrefab, RandomSpawnPosition(), Quaternion.identity);
+            Instantiate(ultraPowerupPrefab, RandomSpawnPosition(), Quaternion.identity);
         }
 
     }
