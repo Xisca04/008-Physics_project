@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 30f;
+    private float speed = 20f;
     private float forwardInput;
     private Rigidbody _rigidbody;
-
-    // Tener de referencia al Focal Point para mejorara la direccion del player segun la camara y su movimiento
-    private GameObject focalPoint;
-
-    public bool hasPowerup;
-    public bool hasUltraPowerup;
-    
+    private GameObject focalPoint;// Tener de referencia al Focal Point para mejorara la direccion del player segun la camara y su movimiento
+    private bool hasPowerup, hasUltraPowerup;
     private float powerupForce = 15f;
+    private float originalScale = 1.5f;
+    private float powerupScale = 2f; // Escala aumentada por el Ultrapowerup
 
     public GameObject[] powerupIndicators;   // Cuenta atras del powerup
 
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+    
+    private void Start()
+    {
         focalPoint = GameObject.Find("Focal Point");
     }
 
@@ -34,15 +35,16 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Powerup"))
         {
-            StartCoroutine(PowerupCountDown());
             hasPowerup = true;
             Destroy(other.gameObject);
+            StartCoroutine(PowerupCountDown());
         }
 
         if (other.gameObject.CompareTag("UltraPowerup"))
         {
             hasUltraPowerup = true;
             Destroy(other.gameObject);
+            StartCoroutine(PowerupCountDown());
         }
     }
 
@@ -54,16 +56,16 @@ public class PlayerController : MonoBehaviour
             Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position).normalized;
             enemyRigidbody.AddForce(awayFromPlayer * powerupForce, ForceMode.Impulse);
         }
-
-        if(other.gameObject.CompareTag("Enemy") && hasUltraPowerup)    // Aumento tamaño con el ultrapowerup
-        {
-            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
-            transform.localScale = new Vector3(5, 5, 5);
-        }
     }
 
     private IEnumerator PowerupCountDown()
     {
+
+        if (hasUltraPowerup)
+        {
+            transform.localScale = powerupScale * Vector3.one;
+        }
+
         for(int i = 0; i < powerupIndicators.Length; i++)
         {
             powerupIndicators[i].SetActive(true);
@@ -71,6 +73,12 @@ public class PlayerController : MonoBehaviour
             powerupIndicators[i].SetActive(false);
         }
 
+        if (hasUltraPowerup)
+        {
+            transform.localScale = originalScale * Vector3.one;
+        }
+        
         hasPowerup = false;
+        hasUltraPowerup = false;
     }
 }

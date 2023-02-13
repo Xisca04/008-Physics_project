@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f18389ab8630042964babb23dc6250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 30
 --- !u!1001 &245963551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -907,9 +906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748c672ff5ef1b341a3599ce4d96a67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  hasPowerup: 1
-  hasUltraPowerup: 0
   powerupIndicators:
   - {fileID: 1832598116}
   - {fileID: 1838465628}
@@ -944,10 +940,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8855312910046618516, guid: d1a9a3cc05e636f419f669b1551dc65f, type: 3}
-  enemiesInScene: 0
-  enemiesPerWave: 1
-  powerupPrefab: {fileID: 5656436947770324549, guid: 59150b21e98c39d4ca30b3b88cb7312e, type: 3}
-  ultraPowerupPrefab: {fileID: 786928514884565067, guid: a4e71afaf74efe0439d960c863963a56, type: 3}
+  powerupPrefabs:
+  - {fileID: 5656436947770324549, guid: 59150b21e98c39d4ca30b3b88cb7312e, type: 3}
+  - {fileID: 786928514884565067, guid: a4e71afaf74efe0439d960c863963a56, type: 3}
 --- !u!4 &2100045485
 Transform:
   m_ObjectHideFlags: 0
