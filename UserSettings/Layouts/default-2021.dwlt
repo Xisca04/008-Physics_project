@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 16
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 1103
     height: 561
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -317,21 +317,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Course Library/Powerup Indicators
+    - Assets/Scrpts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Course Library/Powerup Indicators
+  - Assets/Scrpts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Francisca CERDA VICENS\RPMI\008-Physics_project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 165b0000
-    m_LastClickedID: 23318
+    m_SelectedIDs: 245b0000
+    m_LastClickedID: 23332
     m_ExpandedIDs: 00000000f65a0000f85a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,7 +490,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c0c4ffff36fbffff
+      m_ExpandedIDs: a8f9ffff36fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -506,7 +506,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 11}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -772,9 +772,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.41348824, y: -0.95317745, z: 2.126627}
+    m_Target: {x: -0.9589209, y: -2.1528158, z: -5.389577}
     speed: 2
-    m_Value: {x: -0.41348824, y: -0.95317745, z: 2.126627}
+    m_Value: {x: -0.9589209, y: -2.1528158, z: -5.389577}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -821,9 +821,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.005953628, y: 0.95052695, z: -0.31005457, w: -0.018251304}
+    m_Target: {x: -0.000921072, y: 0.986843, z: -0.16159536, w: -0.005623984}
     speed: 2
-    m_Value: {x: -0.005953617, y: 0.95052516, z: -0.31005397, w: -0.018251268}
+    m_Value: {x: -0.0009210699, y: 0.9868408, z: -0.16159499, w: -0.0056239716}
   m_Size:
     m_Target: 8.117674
     speed: 2
